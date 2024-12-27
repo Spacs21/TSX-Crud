@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { v4 as uuidv4 } from 'uuid';
-import BASE_URL from '../api';
 
 interface FoodForm {
     name: string;
@@ -25,6 +24,7 @@ const Products = () => {
     const [data, setData] = useState<FoodForm>(initialState)
     const [products, setProducts] = useState<FoodForm[]>([])
     const [isEditing, setIsEditing] = useState<boolean>(false);
+    const BASE_URL = 'https://676de1f5df5d7dac1cc940e9.mockapi.io/food';
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value, type, checked } = e.target;
